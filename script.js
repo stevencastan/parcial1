@@ -81,6 +81,11 @@ function calcular(){
 
 }
 
+function recargar(){
+    alert("se compraron la boletas");
+    document.getElementById("formulario").reset();
+}
+
 
 
     
