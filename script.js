@@ -3,6 +3,9 @@ const boleta=document.getElementById("boletas");
 var x = document.getElementById("oculto");
 x.style.display = "none";
 
+var y = document.getElementById("oculto2");
+y.style.display = "none";
+
 
 boleta.addEventListener("input", () => { 
     if (boleta.value < 1 || boleta.value > 10 ) {
@@ -20,29 +23,67 @@ function mostrar() {
 }
 
 function calcular(){
-   alert();
     const vip=document.getElementById("vip");
     const general=document.getElementById("general");
-    const valorT=0;
+    var valorT=0;
 
-    if (vip.checked) {
+    var y = document.getElementById("oculto2");
+    y.style.display = "none";
+
+    if (vip.checked) { 
+        y.style.display = "block"; 
         valorT=500000;
-         if(vip.checked && general.checked){
+
+        let h1s = document.querySelectorAll(".parrafito");
+     
+        for (let index = 0; index < h1s.length; index++) {
+            
+            h1s[index].innerHTML =valorT ;
+            
+        }
+
+        if(general.checked){
+             
             const valor=850000*0.20;
             valorT=850000-valor;
-            alert(valorT);
-         }
-    }else if(general.checked){
+            let h1s = document.querySelectorAll(".parrafito");
+     
+            for (let index = 0; index < h1s.length; index++) {
+                
+                h1s[index].innerHTML =valorT ;
+                
+            }
+        }      
+    }
+
+    if(general.checked){
+        y.style.display = "block"; 
         valorT=350000;
-        if(vip.checked && general.checked){
+        let h1s = document.querySelectorAll(".parrafito");
+     
+        for (let index = 0; index < h1s.length; index++) {
+            
+            h1s[index].innerHTML =valorT ;
+            
+        }
+        if(vip.checked){
             const valor=850000*0.20;
             valorT=850000-valor;
-            alert(valorT);
-         }
+            let h1s = document.querySelectorAll(".parrafito");
+     
+            for (let index = 0; index < h1s.length; index++) {
+                
+                h1s[index].innerHTML =valorT ;
+                
+            }
+        }
     }
 
 }
 
+
+
+    
 /*
 function cargar(){
     if(boleta.value== ""){
